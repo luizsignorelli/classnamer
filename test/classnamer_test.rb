@@ -1,4 +1,11 @@
-require File.expand_path("test_helper", File.dirname(__FILE__))
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'rubygems'
+gem 'minitest'
+require 'minitest/unit'
+require 'minitest/autorun'
+require 'classnamer'
 
 class ClassnamerTest < MiniTest::Unit::TestCase
   def test_all_parts_should_be_strings
