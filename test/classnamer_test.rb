@@ -8,7 +8,7 @@ require 'classnamer'
 
 class ClassnamerTest < MiniTest::Unit::TestCase
   def test_all_parts_should_be_strings
-    assert Classnamer::PARTS.flatten(1).all? { |part| part.is_a?(String) }
+    assert Classnamer::PARTS.flatten(1).all? { |part| part.kind_of?(String) }
   end
 
   def test_classnamer_should_respond_to_generate
