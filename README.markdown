@@ -15,3 +15,18 @@ The code is tested in MRI 1.8.7, 1.9.2, and 1.9.3.
     require 'rubygems'
     require 'classnamer'
     puts Classnamer.generate    # => PrioritizedUploadWrapper
+
+## Using on the web
+
+There is a web version of this tool at
+[http://www.classnamer.com/](http://www.classnamer.com/).
+
+## Author
+
+This was written by Aaron Beckerman, who you can email at
+aaron@aaronbeckerman.com.
+
+## Copyright
+
+This code is distributed under an MIT-style copyright license. See the LICENSE
+file for details.
