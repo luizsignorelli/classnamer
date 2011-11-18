@@ -17,7 +17,7 @@ class ClassnamerTest < MiniTest::Unit::TestCase
   end
 
   def test_generate_should_return_a_string
-    assert Classnamer.generate.is_a?(String)
+    assert_kind_of String, Classnamer.generate
   end
 
   def test_generated_name_should_not_be_empty
