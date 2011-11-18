@@ -29,6 +29,6 @@ class ClassnamerTest < MiniTest::Unit::TestCase
 
   def test_generated_name_should_end_with_a_final_part
     name = Classnamer.generate
-    assert Classnamer::PARTS[2].any? { |part| name =~ /#{part}$/ }, 'generated name should end with part 2'
+    assert Classnamer::PARTS[2].any? { |part| name =~ /#{part}$/ }, 'generated name should end with a final part'
   end
 end
