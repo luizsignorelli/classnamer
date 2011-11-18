@@ -5,12 +5,12 @@ enterprise-friendly object-oriented programming languages like C++ and Java.
 
 The code is tested in MRI 1.8.7, 1.9.2, and 1.9.3.
 
-## Using the command-line program:
+## Using the command-line program
 
     $ classnamer
     PrioritizedUploadWrapper
 
-## Using in Ruby code:
+## Using in Ruby code
 
     require 'rubygems'
     require 'classnamer'
