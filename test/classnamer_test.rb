@@ -21,11 +21,22 @@ class ClassnamerTest < Test::Unit::TestCase
     assert Classnamer.generate.is_a?(String), 'Classnamer.generate should return a string'
   end
 
-  def test_generate_should_return_a_non_empty_string
-    assert Classnamer.generate.size > 0, 'return value of Classnamer.generate should not be empty'
+  def test_generated_name_should_not_be_empty
+    assert Classnamer.generate.size > 0, 'generated name should not be empty'
   end
 
-  def test_generate_should_return_a_string_starting_with_a_capital_letter
-    assert Classnamer.generate =~ /^[A-Z]/, 'return value of Classnamer.generate should start with an uppercase letter'
+  def test_generated_name_should_start_with_part_0
+    name = Classnamer.generate
+    assert Classnamer::PARTS[0].map { |part| (name =~ /^#{part}/).nil? }.include?(false), 'generated name should start with part 1'
+  end
+
+  def test_generated_name_should_contain_part_1
+    name = Classnamer.generate
+    assert Classnamer::PARTS[1].map { |part| (name =~ /#{part}/).nil? }.include?(false), 'generated name should contain part 1'
+  end
+
+  def test_generated_name_should_end_with_part_2
+    name = Classnamer.generate
+    assert Classnamer::PARTS[2].map { |part| (name =~ /#{part}$/).nil? }.include?(false), 'generated name should end with part 2'
   end
 end
