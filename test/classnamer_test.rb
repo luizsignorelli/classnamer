@@ -1,7 +1,5 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require 'rubygems'
-gem 'minitest'
 require 'minitest/unit'
 require 'minitest/autorun'
 require 'classnamer'
