@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'classnamer'
+require "classnamer"
 
 puts Classnamer.generate
