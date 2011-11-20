@@ -12,7 +12,6 @@ The code is tested in MRI 1.8.7, 1.9.2, and 1.9.3.
 
 ## Using in Ruby code
 
-    require "rubygems"
     require "classnamer"
     puts Classnamer.generate    # => PrioritizedUploadWrapper
 
