@@ -27,5 +27,5 @@ aaron@aaronbeckerman.com.
 
 ## Copyright
 
-This code is distributed under an MIT-style copyright license. See the LICENSE
-file for details.
+This code is distributed under the MITt license. See the LICENSE file for
+details.
