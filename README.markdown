@@ -17,8 +17,7 @@ The code is tested in MRI 1.8.7, 1.9.2, and 1.9.3.
 
 ## Using on the web
 
-There is a web version of this tool at
-[http://www.classnamer.com/](http://www.classnamer.com/).
+There is a web version of this tool at http://www.classnamer.com/ .
 
 ## Author
 
