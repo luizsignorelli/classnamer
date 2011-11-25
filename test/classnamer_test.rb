@@ -7,6 +7,10 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     assert Classnamer::PARTS.flatten(1).all? { |part| part.kind_of?(String) }
   end
 
+  def test_all_parts_should_start_with_an_uppercase_letter
+    assert Classnamer::PARTS.flatten(1).all? { |part| part =~ /^[A-Z]/ }
+  end
+
   def test_classnamer_should_respond_to_generate
     assert_respond_to Classnamer, :generate
   end
