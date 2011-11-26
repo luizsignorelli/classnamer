@@ -1,6 +1,4 @@
-require "minitest/unit"
-require "minitest/autorun"
-require "classnamer"
+require "test_helper"
 
 class ClassnamerTest < MiniTest::Unit::TestCase
   def test_all_parts_should_be_strings
