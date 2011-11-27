@@ -29,12 +29,10 @@ module Classnamer
   ]
 
   def self.generate
-    self::PARTS.reduce("") { |answer, part_candidates|
-      # Ruby 1.9 has Array#sample and Ruby 1.8 has Array#choice. I want this to
-      # run on both, so I'll get a random element manually. That seems better
-      # than calling a different method depending on the interpreter's version
-      # number.
-      answer << part_candidates[rand(part_candidates.size)]
-    }
+    # Ruby 1.9 has Array#sample and Ruby 1.8 has Array#choice. I want this to
+    # run on both, so I'll get a random element manually. That seems better
+    # than calling a different method depending on the interpreter's version
+    # number.
+    self::PARTS.map{|a| a[rand(a.length)]}.join("")
   end
 end
