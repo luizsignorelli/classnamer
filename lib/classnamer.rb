@@ -33,6 +33,6 @@ module Classnamer
     # run on both, so I'll get a random element manually. That seems better
     # than calling a different method depending on the interpreter's version
     # number.
-    self::PARTS.map{|a| a[rand(a.length)]}.join("")
+    self::PARTS.map{|a| a[rand a.length]}.join("")
   end
 end
