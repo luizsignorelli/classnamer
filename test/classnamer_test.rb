@@ -17,10 +17,6 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     assert_kind_of String, Classnamer.generate
   end
 
-  def test_generated_name_should_not_be_empty
-    refute_empty Classnamer.generate
-  end
-
   def test_generated_name_should_start_with_an_initial_part
     name = Classnamer.generate
     assert Classnamer::PARTS[0].any? { |part| name =~ /^#{part}/ }
