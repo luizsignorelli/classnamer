@@ -9,6 +9,10 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     assert Classnamer::PARTS.flatten(1).all?{|part| part =~ /^[A-Z]/}
   end
 
+  def test_there_should_be_three_sets_of_part_candidates
+    assert_equal 3, Classnamer::PARTS.length
+  end
+
   def test_classnamer_should_respond_to_generate
     assert_respond_to Classnamer, :generate
   end
