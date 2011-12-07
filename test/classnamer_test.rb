@@ -1,6 +1,10 @@
 require "test_helper"
 
 class ClassnamerTest < MiniTest::Unit::TestCase
+  def test_classnamer_has_version_string
+    assert_kind_of String, Classnamer::VERSION
+  end
+
   def test_part_candidate_matrix_is_an_array
     assert_kind_of Array, Classnamer::PART_CANDIDATE_MATRIX
   end
