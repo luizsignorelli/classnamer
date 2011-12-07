@@ -1,7 +1,7 @@
 require "classnamer/version"
 
 module Classnamer
-  PARTS = [
+  PART_CANDIDATE_MATRIX = [
     %w{Threadsafe Optimized Stable Automatic Abstract Serializable Writable
        Readable Executable Nonblocking Scriptable Smart Basic Checked
        ErrorCorrecting Simple Secure Cryptographic Flexible Configurable
@@ -28,11 +28,11 @@ module Classnamer
        Controller Loader Converter Constraint Module Migrator}
   ]
 
-  def self.generate(parts = self::PARTS)
+  def self.generate(matrix = self::PART_CANDIDATE_MATRIX)
     # Ruby 1.9 has Array#sample and Ruby 1.8 has Array#choice. I want this to
     # run on both, so I'll get a random element manually. That seems better
     # than calling a different method depending on the interpreter's version
     # number.
-    parts.map{|a| a[rand a.length]}.join("")
+    matrix.map{|a| a[rand a.length]}.join("")
   end
 end
