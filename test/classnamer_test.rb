@@ -35,4 +35,8 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     name = Classnamer.generate
     assert Classnamer::PARTS[2].any?{|part| name =~ /#{part}$/}
   end
+
+  def test_generate_should_return_a_concatenation_of_parts
+    assert_equal "FooBarBaz", Classnamer.generate([["Foo"], ["Bar"], ["Baz"]])
+  end
 end

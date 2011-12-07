@@ -28,11 +28,11 @@ module Classnamer
        Controller Loader Converter Constraint Module Migrator}
   ]
 
-  def self.generate
+  def self.generate(parts = self::PARTS)
     # Ruby 1.9 has Array#sample and Ruby 1.8 has Array#choice. I want this to
     # run on both, so I'll get a random element manually. That seems better
     # than calling a different method depending on the interpreter's version
     # number.
-    self::PARTS.map{|a| a[rand a.length]}.join("")
+    parts.map{|a| a[rand a.length]}.join("")
   end
 end
