@@ -39,21 +39,6 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     end
   end
 
-  def test_generated_name_starts_with_an_initial_part_candidate
-    name = Classnamer.generate
-    assert Classnamer::PART_CANDIDATE_MATRIX[0].any?{|part_candidate| name =~ /^#{part_candidate}/}
-  end
-
-  def test_generated_name_contains_a_middle_part_candidate
-    name = Classnamer.generate
-    assert Classnamer::PART_CANDIDATE_MATRIX[1].any?{|part_candidate| name =~ /#{part_candidate}/}
-  end
-
-  def test_generated_name_ends_with_a_final_part_candidate
-    name = Classnamer.generate
-    assert Classnamer::PART_CANDIDATE_MATRIX[2].any?{|part_candidate| name =~ /#{part_candidate}$/}
-  end
-
   def test_generate_returns_a_concatenation_of_part_candidates
     assert_equal "FooBarBazQux", Classnamer.generate([["Foo"], ["Bar"], ["Baz"], ["Qux"]])
   end
