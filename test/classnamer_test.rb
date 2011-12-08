@@ -77,6 +77,6 @@ class ClassnamerTest < MiniTest::Unit::TestCase
   end
 
   def test_generate_converts_part_candidates_to_strings
-    assert_equal "42ObjectFoo", Classnamer.generate([[42], [Object], [nil], ["Foo"]])
+    assert_equal "42ObjecttrueSymbolFoo", Classnamer.generate([[42], [Object], [nil], [true], [:Symbol], ["Foo"]])
   end
 end
