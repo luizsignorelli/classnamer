@@ -49,7 +49,19 @@ class ClassnamerTest < MiniTest::Unit::TestCase
   end
 
   def test_generate_returns_a_concatenation_of_part_candidates
-    assert_equal "FooBarBaz", Classnamer.generate([["Foo"], ["Bar"], ["Baz"]])
+    assert_equal "FooBarBazQux", Classnamer.generate([["Foo"], ["Bar"], ["Baz"], ["Qux"]])
+  end
+
+  def test_generate_returns_a_single_part_name
+    assert_equal "Foo", Classnamer.generate([["Foo"]])
+  end
+
+  def test_generate_returns_empty_string_for_empty_part_candidate_matrix
+    assert_equal "", Classnamer.generate([])
+  end
+
+  def test_generate_returns_empty_string_for_empty_part_candidate_arrays
+    assert_equal "", Classnamer.generate([[], [], []])
   end
 
   def test_generate_uses_default_part_candidate_matrix
