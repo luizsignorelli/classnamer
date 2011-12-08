@@ -90,4 +90,8 @@ class ClassnamerTest < MiniTest::Unit::TestCase
       Classnamer.generate [["Foo"], nil]
     end
   end
+
+  def test_generate_converts_part_candidates_to_strings
+    assert_equal "42ObjectFoo", Classnamer.generate([[42], [Object], [nil], ["Foo"]])
+  end
 end
