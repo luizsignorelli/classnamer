@@ -33,6 +33,12 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     assert_kind_of String, Classnamer.generate
   end
 
+  def test_generate_does_not_output
+    assert_silent do
+      Classnamer.generate
+    end
+  end
+
   def test_generated_name_starts_with_an_initial_part_candidate
     name = Classnamer.generate
     assert Classnamer::PART_CANDIDATE_MATRIX[0].any?{|part_candidate| name =~ /^#{part_candidate}/}
@@ -71,5 +77,17 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     srand seed
     name2 = Classnamer::generate
     assert_equal name1, name2
+  end
+
+  def test_generate_raises_when_given_inappropriate_argument
+    assert_raises(NoMethodError) do
+      Classnamer.generate nil
+    end
+  end
+
+  def test_generate_raises_when_argument_contains_an_inappropriate_element
+    assert_raises(NoMethodError) do
+      Classnamer.generate [["Foo"], nil]
+    end
   end
 end
