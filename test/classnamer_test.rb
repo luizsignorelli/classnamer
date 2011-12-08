@@ -1,7 +1,7 @@
 require "test_helper"
 
 class ClassnamerTest < MiniTest::Unit::TestCase
-  def test_classnamer_has_version_string
+  def test_classnamer_has_a_version_string
     assert_kind_of String, Classnamer::VERSION
   end
 
