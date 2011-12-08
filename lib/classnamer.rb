@@ -1,6 +1,14 @@
 require "classnamer/version"
 
+# This module randomly generates class names, such as
+# "PrioritizedUploadWrapper". It does this by concatenating several parts
+# ("Prioritized", "Upload", and "Wrapper", in this case), which are strings
+# randomly selected from arrays of candidates. ("Prioritized", "Upload", and
+# "Wrapper" were each selected from a different array.) An array of such arrays
+# is called a part candidate matrix.
 module Classnamer
+
+  # The default part candidate matrix, used by generate.
   PART_CANDIDATE_MATRIX = [
     %w{Threadsafe Optimized Stable Automatic Abstract Serializable Writable
        Readable Executable Nonblocking Scriptable Smart Basic Checked
@@ -28,6 +36,10 @@ module Classnamer
        Controller Loader Converter Constraint Module Migrator}
   ]
 
+  # This method does the actual work of randomly generating a class name. It
+  # takes one argument, a part candidate matrix. But the argument is optional;
+  # if none is specified, the module's default part candidate matrix
+  # (PART_CANDIDATE_MATRIX) is used.
   def self.generate(matrix = self::PART_CANDIDATE_MATRIX)
     # Ruby 1.9 has Array#sample and Ruby 1.8 has Array#choice. I want this to
     # run on both, so I'll get a random element manually. That seems better
