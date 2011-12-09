@@ -13,9 +13,9 @@ module Classnamer
     %w{Threadsafe Optimized Stable Automatic Abstract Serializable Writable
        Readable Executable Nonblocking Scriptable Smart Basic Checked
        ErrorCorrecting Simple Secure Cryptographic Flexible Configurable
-       Internal Property Cloneable Legacy Recursive Multiple Threaded Virtual
-       Singleton Stateless Stateful Localized Prioritized Generic Dynamic
-       Shared Runnable Modal},
+       Internal Cloneable Legacy Recursive Multiple Threaded Virtual Singleton
+       Stateless Stateful Localized Prioritized Generic Dynamic Shared Runnable
+       Modal},
     %w{Byte Task Object Resource Mutex Memory List Node File Lock Pixel
        Character Command Client Server Socket Thread Notification Keystroke
        Timestamp Raster String Hash Integer Cache Scrollbar Grid Jar Connection
