@@ -64,13 +64,13 @@ class ClassnamerTest < MiniTest::Unit::TestCase
     assert_equal name1, name2
   end
 
-  def test_generate_raises_when_given_inappropriate_argument
+  def test_generate_raises_an_exception_when_given_an_inappropriate_argument
     assert_raises(NoMethodError) do
       Classnamer.generate nil
     end
   end
 
-  def test_generate_raises_when_argument_contains_an_inappropriate_element
+  def test_generate_raises_an_exception_when_argument_contains_an_inappropriate_element
     assert_raises(NoMethodError) do
       Classnamer.generate [["Foo"], nil]
     end
