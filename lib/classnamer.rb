@@ -21,19 +21,19 @@ module Classnamer
        Timestamp Raster String Hash Integer Cache Scrollbar Grid Jar Connection
        Database Graph Row Column Record Metadata Transaction Message Request
        Response Query Statement Result Upload Download User Directory Button
-       Lolcat Girlfriend Yakizakana Flugzeug},
+       Device Search Lolcat Girlfriend Yakizakana Flugzeug},
     %w{Sorter Allocator Tokenizer Writer Reader Randomizer Initializer Factory
        FactoryFactory Panel Frame Container Compressor Expander Counter
        Collector Collection Wrapper Accumulator Table Marshaller Demarshaller
        Extractor Parser Scanner Interpreter Validator Window Dialog Stream
        Listener Event Exception Vector Lexer Analyzer Iterator Set Tree
        Concatenator Monitor Tester Buffer Selector Visitor Adapter Helper
-       Annotation Permission Info Action Impl Channel Filter Manager Mediator
+       Annotation Permission Info Action Channel Filter Manager Mediator
        Operation Context Queue Stack View Engine Publisher Subscriber Delegator
        State Processor Handler Generator Dispatcher Bundle Builder Logger
        Iterator Observer Encoder Decoder Importer Exporter Util Policy
        Preference Formatter Sequence Comparator Definition Timer Servlet
-       Controller Loader Converter Constraint Module Migrator}
+       Controller Loader Converter Constraint Module Migrator Descriptor}
   ]
 
   # This method does the actual work of randomly generating a class name. It
