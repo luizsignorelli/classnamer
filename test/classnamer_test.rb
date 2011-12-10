@@ -58,9 +58,9 @@ class ClassnamerTest < MiniTest::Unit::TestCase
   def test_generate_uses_default_part_candidate_matrix
     seed = srand
     srand seed
-    name1 = Classnamer::generate(Classnamer::PART_CANDIDATE_MATRIX)
+    name1 = Classnamer.generate(Classnamer::PART_CANDIDATE_MATRIX)
     srand seed
-    name2 = Classnamer::generate
+    name2 = Classnamer.generate
     assert_equal name1, name2
   end
 
