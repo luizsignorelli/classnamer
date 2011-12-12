@@ -1,5 +1,20 @@
 #!/usr/bin/env ruby
 
+require "optparse"
 require "classnamer"
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: classnamer [options]"
+
+  opts.on_tail("-v", "--version", "Show version number") do
+    puts "Classnamer version #{Classnamer::VERSION}"
+    exit
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+end.parse!
 
 puts Classnamer.generate
