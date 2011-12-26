@@ -13,9 +13,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "classnamer"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = ["Gemfile", "LICENSE", "README", "Rakefile", "bin/classnamer", "classnamer.gemspec", "lib/classnamer.rb", "lib/classnamer/version.rb", "test/classnamer_test.rb", "test/test_helper.rb"]
+  s.test_files    = ["test/classnamer_test.rb", "test/test_helper.rb"]
+  s.executables   = ["classnamer"]
   s.require_paths = ["lib"]
   s.add_development_dependency "bundler", "1.0.21"
   s.add_development_dependency "rake", "0.9.2.2"
