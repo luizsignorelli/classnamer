@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.add_development_dependency "bundler", "1.0.21"
   s.add_development_dependency "rake", "0.9.2.2"
-  s.add_development_dependency "minitest", "2.11.0"
+  s.add_development_dependency "minitest", "2.11.1"
 end
