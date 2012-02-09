@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.test_files    = ["test/classnamer_test.rb", "test/test_helper.rb"]
   s.executables   = ["classnamer"]
   s.require_paths = ["lib"]
-  s.add_development_dependency "bundler", "1.0.21"
+  s.add_development_dependency "bundler", "1.0.22"
   s.add_development_dependency "rake", "0.9.2.2"
   s.add_development_dependency "minitest", "2.11.1"
 end
