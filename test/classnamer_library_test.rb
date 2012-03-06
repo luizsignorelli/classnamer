@@ -13,8 +13,16 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     assert_equal 3, Classnamer::PART_CANDIDATE_MATRIX.length
   end
 
+  def test_part_candidate_matrix_is_frozen
+    assert Classnamer::PART_CANDIDATE_MATRIX.frozen?
+  end
+
   def test_each_element_of_part_candidate_matrix_is_an_array
     assert Classnamer::PART_CANDIDATE_MATRIX.all?{|part_array| part_array.kind_of?(Array)}
+  end
+
+  def test_each_element_of_part_candidate_matrix_is_frozen
+    assert Classnamer::PART_CANDIDATE_MATRIX.all?(&:frozen?)
   end
 
   def test_each_part_candidate_is_a_string
@@ -23,6 +31,10 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
 
   def test_each_part_candidate_starts_with_an_uppercase_letter
     assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).all?{|part_candidate| part_candidate =~ /^[A-Z]/}
+  end
+
+  def test_each_part_candidate_is_frozen
+    assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).all?(&:frozen?)
   end
 
   def test_classnamer_responds_to_generate

@@ -34,7 +34,11 @@ module Classnamer
        Iterator Observer Encoder Decoder Importer Exporter Util Policy
        Preference Formatter Sequence Comparator Definition Timer Servlet
        Controller Loader Converter Constraint Module Migrator Descriptor}
-  ]
+  ].freeze.tap do |matrix| # recursive freeze
+    matrix.each do |array|
+      array.freeze.each(&:freeze)
+    end
+  end
 
   # This method does the actual work of randomly generating a class name. It
   # takes one argument, a part candidate matrix. But the argument is optional;
