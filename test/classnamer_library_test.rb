@@ -1,8 +1,8 @@
 require "test_helper"
 
 class ClassnamerLibraryTest < MiniTest::Unit::TestCase
-  def test_classnamer_has_a_version_string
-    assert_kind_of String, Classnamer::VERSION
+  def test_version_constant_exists
+    refute_nil Classnamer::VERSION
   end
 
   def test_part_candidate_matrix_is_an_array
