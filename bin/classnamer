@@ -7,7 +7,7 @@ OptionParser.new do |opts|
   opts.banner = "Usage: classnamer [options]"
 
   opts.on_tail("-v", "--version", "Show version number") do
-    puts "Classnamer version #{Classnamer::VERSION}"
+    puts "#{Classnamer::VERSION}"
     exit
   end
 
