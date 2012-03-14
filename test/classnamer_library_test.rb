@@ -5,10 +5,6 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     refute_nil Classnamer::VERSION
   end
 
-  def test_part_candidate_matrix_is_an_array
-    assert_kind_of Array, Classnamer::PART_CANDIDATE_MATRIX
-  end
-
   def test_part_candidate_matrix_has_three_elements
     assert_equal 3, Classnamer::PART_CANDIDATE_MATRIX.length
   end
@@ -17,16 +13,8 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     assert Classnamer::PART_CANDIDATE_MATRIX.frozen?
   end
 
-  def test_each_element_of_part_candidate_matrix_is_an_array
-    assert Classnamer::PART_CANDIDATE_MATRIX.all?{|part_array| part_array.kind_of?(Array)}
-  end
-
   def test_each_element_of_part_candidate_matrix_is_frozen
     assert Classnamer::PART_CANDIDATE_MATRIX.all?(&:frozen?)
-  end
-
-  def test_each_part_candidate_is_a_string
-    assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).all?{|part_candidate| part_candidate.kind_of?(String)}
   end
 
   def test_each_part_candidate_starts_with_an_uppercase_letter
@@ -39,10 +27,6 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
 
   def test_classnamer_responds_to_generate
     assert_respond_to Classnamer, :generate
-  end
-
-  def test_generate_returns_a_string
-    assert_kind_of String, Classnamer.generate
   end
 
   def test_generate_does_not_output
