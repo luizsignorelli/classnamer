@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "classnamer"
 
-  s.files         = ["Gemfile", "LICENSE", "README", "Rakefile", "bin/classnamer", "classnamer.gemspec", "lib/classnamer.rb", "lib/classnamer/version.rb", "test/classnamer_library_test.rb", "test/test_helper.rb"]
+  s.files         = ["Gemfile", "LICENSE", "README.rdoc", "Rakefile", "bin/classnamer", "classnamer.gemspec", "lib/classnamer.rb", "lib/classnamer/version.rb", "test/classnamer_library_test.rb", "test/test_helper.rb"]
   s.test_files    = ["test/classnamer_library_test.rb", "test/test_helper.rb"]
   s.executables   = ["classnamer"]
   s.require_paths = ["lib"]
