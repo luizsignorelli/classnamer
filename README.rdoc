@@ -20,7 +20,7 @@ The code is tested in MRI 1.8.7, 1.9.2, and 1.9.3.
 
 == Using on the web
 
-There is a web version of this tool at http://www.classnamer.com/ .
+This gem is the basis of a {web application}[http://www.classnamer.com/] ({source code}[https://github.com/ab9/web_classnamer]).
 
 
 == Author
