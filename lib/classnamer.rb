@@ -38,15 +38,17 @@ module Classnamer
     array.freeze.each(&:freeze)
   end
 
+  # The default index generator, used by generate.
+  PRNG = ::Kernel.method(:rand).freeze
+
   # This method does the actual work of randomly generating a class name. It
-  # takes one argument, a part candidate matrix. But the argument is optional;
-  # if none is specified, the module's default part candidate matrix
-  # (PART_CANDIDATE_MATRIX) is used.
-  def self.generate(matrix = self::PART_CANDIDATE_MATRIX)
-    # Ruby 1.9 has Array#sample and Ruby 1.8 has Array#choice. I want this to
-    # run on both, so I'll get a random element manually. That seems better
-    # than calling a different method depending on the interpreter's version
-    # number.
-    matrix.map{|a| a[rand a.length]}.join("")
+  # takes two arguments, both optional: a part candidate matrix (+matrix+) and
+  # an index generator (+prng+). If +matrix+ is not specified, the module's
+  # default part candidate matrix (PART_CANDIDATE_MATRIX) is used. If +prng+ is
+  # not specified, Kernel::rand is used. +matrix+ must act like an array of
+  # arrays of strings. +prng+ must have a "call" method that takes one integer
+  # argument (an array length) and acts like Kernel::rand.
+  def self.generate(matrix = self::PART_CANDIDATE_MATRIX, prng = self::PRNG)
+    matrix.map{|a| a[prng.call a.length]}.join("")
   end
 end

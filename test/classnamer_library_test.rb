@@ -25,8 +25,16 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).all?(&:frozen?)
   end
 
+  def test_prng_is_frozen
+    assert Classnamer::PRNG.frozen?
+  end
+
   def test_classnamer_responds_to_generate
     assert_respond_to Classnamer, :generate
+  end
+
+  def test_classnamer_generates_a_string
+    assert_kind_of String, Classnamer.generate
   end
 
   def test_generate_does_not_output
@@ -35,8 +43,14 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     end
   end
 
-  def test_generate_returns_a_concatenation_of_part_candidates
-    assert_equal "FooBarBazQux", Classnamer.generate([["Foo"], ["Bar"], ["Baz"], ["Qux"]])
+  def test_generate_returns_concatenation_of_part_candidates_as_strings
+    assert_equal "42ObjecttrueSymbolFoo", Classnamer.generate([[42], [Object], [nil], [true], [:Symbol], ["Foo"]])
+  end
+
+  def test_generate_uses_prng
+    matrix = Classnamer::PART_CANDIDATE_MATRIX
+    expected = matrix[0][1] + matrix[1][1] + matrix[2][1]
+    assert_equal expected, Classnamer.generate(matrix, lambda { |n| 1 })
   end
 
   def test_generate_returns_a_single_part_name
@@ -51,18 +65,15 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     assert_equal "", Classnamer.generate([[], [], []])
   end
 
-  def test_generate_uses_default_part_candidate_matrix
-    seed = srand
-    srand seed
-    name1 = Classnamer.generate(Classnamer::PART_CANDIDATE_MATRIX)
-    srand seed
-    name2 = Classnamer.generate
-    assert_equal name1, name2
-  end
-
-  def test_generate_raises_an_exception_when_given_an_inappropriate_argument
+  def test_generate_raises_an_exception_when_given_an_inappropriate_matrix
     assert_raises(NoMethodError) do
       Classnamer.generate nil
+    end
+  end
+
+  def test_generate_raises_an_exception_when_given_an_inappropriate_prng
+    assert_raises(NoMethodError) do
+      Classnamer.generate Classnamer::PART_CANDIDATE_MATRIX, nil
     end
   end
 
@@ -70,9 +81,5 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     assert_raises(NoMethodError) do
       Classnamer.generate [["Foo"], nil]
     end
-  end
-
-  def test_generate_converts_part_candidates_to_strings
-    assert_equal "42ObjecttrueSymbolFoo", Classnamer.generate([[42], [Object], [nil], [true], [:Symbol], ["Foo"]])
   end
 end
