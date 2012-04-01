@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Aaron Beckerman"]
   s.email       = ["aaron@aaronbeckerman.com"]
   s.homepage    = "https://github.com/ab9/classnamer"
-  s.summary     = %q{Randomly generates object-oriented class names}
-  s.description = %q{This gem randomly generates tongue-in-cheek class names suitable for enterprise-friendly object-oriented programming languages like C++ and Java.}
+  s.summary     = %q{A random class name generator.}
+  s.description = %q{Classnamer randomly generates tongue-in-cheek class names suitable for enterprise-friendly object-oriented programming languages like C++ and Java. It includes a library and a command-line program.}
 
   s.rubyforge_project = "classnamer"
 
