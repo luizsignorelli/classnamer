@@ -1,9 +1,11 @@
 = \Classnamer
 
-This Ruby gem randomly generates tongue-in-cheek class names suitable for
-enterprise-friendly object-oriented programming languages like C++ and Java.
+Classnamer randomly generates tongue-in-cheek class names suitable for
+enterprise-friendly object-oriented programming languages like C++ and Java. It
+includes a library and a command-line program.
 
-The code is tested in MRI 1.8.7, 1.9.2, and 1.9.3.
+This code is packaged as a RubyGem and tested with MRI (Matz's Ruby
+Interpreter) versions 1.8.7, 1.9.2, and 1.9.3.
 
 
 == Using the command-line program
@@ -20,7 +22,8 @@ The code is tested in MRI 1.8.7, 1.9.2, and 1.9.3.
 
 == Using on the web
 
-This gem is the basis of a {web application}[http://www.classnamer.com/] ({source code}[https://github.com/ab9/web_classnamer]).
+This gem is the basis of a {web application}[http://www.classnamer.com/]
+({source code}[https://github.com/ab9/web_classnamer]) also called Classnamer.
 
 
 == Author
@@ -31,5 +34,5 @@ aaron@aaronbeckerman.com.
 
 == Copyright
 
-This code is distributed under the MIT license. See the LICENSE file for
-details.
+This code is distributed under the MIT License (also known as the Expat
+License). See the LICENSE file for details.
