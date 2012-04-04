@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.description = %q{Classnamer randomly generates tongue-in-cheek class names suitable for enterprise-friendly object-oriented programming languages like C++ and Java. It includes a library and a command-line program.}
   s.license = "MIT"
   s.required_ruby_version = ">= 1.8.7"
-  s.rubyforge_project = "classnamer"
   s.bindir = "bin"
   s.files = ["Gemfile", "LICENSE", "README.rdoc", "Rakefile", "bin/classnamer", "classnamer.gemspec", "lib/classnamer.rb", "lib/classnamer/version.rb", "test/classnamer_library_test.rb", "test/test_helper.rb"]
   s.test_files = ["test/classnamer_library_test.rb", "test/test_helper.rb"]
