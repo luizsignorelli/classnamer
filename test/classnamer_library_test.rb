@@ -50,7 +50,7 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
   def test_generate_uses_prng
     matrix = [%w{Foo0 Foo1 Foo2}, %w{Bar0 Bar1 Bar2}, %w{Baz0 Baz1 Baz2}]
     indices = [0, 2, 1]
-    assert_equal "Foo0Bar2Baz1", Classnamer.generate(matrix, lambda { |n| indices.shift })
+    assert_equal "Foo0Bar2Baz1", Classnamer.generate(matrix, lambda{|n| indices.shift})
   end
 
   def test_generate_returns_a_single_part_name
