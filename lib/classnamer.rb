@@ -51,4 +51,16 @@ module Classnamer
   def self.generate(matrix = self::PART_CANDIDATE_MATRIX, prng = self::PRNG)
     matrix.map{|a| a[prng.call a.length]}.join("")
   end
+
+  class Generator
+    def initialize(matrix = Classnamer::PART_CANDIDATE_MATRIX,
+      prng = Classnamer::PRNG)
+      @matrix = matrix
+      @prng = prng
+    end
+
+    def generate
+      Classnamer.generate(@matrix, @prng)
+    end
+  end
 end
