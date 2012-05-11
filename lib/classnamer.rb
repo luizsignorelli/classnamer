@@ -52,13 +52,19 @@ module Classnamer
     matrix.map{|a| a[prng.call a.length]}.join("")
   end
 
+  # A class name generator that always uses the specified part candidate matrix
+  # and index generator.
   class Generator
+    # Creates a class name generator with the specified part candidate matrix
+    # and index generator.
     def initialize(matrix = Classnamer::PART_CANDIDATE_MATRIX,
       prng = Classnamer::PRNG)
       @matrix = matrix
       @prng = prng
     end
 
+    # Generates a class name using the part candidate matrix and index
+    # generator passed in when the object was created.
     def generate
       Classnamer.generate(@matrix, @prng)
     end
