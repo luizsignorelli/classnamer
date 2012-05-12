@@ -25,20 +25,20 @@ You can customize how class names are generated. Classnamer will generate
 random class names by combining randomly-selected elements from arrays that you
 provide.
 
-  puts Classnamer.generate([%w{Foo Bar}, %w{Baz Qux}]) # => FooQux
+  puts Classnamer.generate([["Foo", "Bar"], ["Baz", "Qux"]]) # => FooQux
+
+You can also specify a custom random number generator. Maybe you don't even
+want it to be random.
+
+  puts Classnamer.generate([["Foo", "Bar"], ["Baz", "Qux"]], lambda{|_| 0})
+    # => FooBaz
 
 If you plan to use the same customizations multiple times, you can create
 a Classnamer::Generator object for that.
 
-  generator = Classnamer::Generator.new([%w{Foo Bar}, %w{Baz Qux}])
+  generator = Classnamer::Generator.new([["Foo", "Bar"], ["Baz", "Qux"]])
   generator.generate # => FooQux
   generator.generate # => BarQux
-
-You can also specify your own custom random-number generator. Maybe you don't
-even want it to be random.
-
-  puts Classnamer.generate([%w{Foo Bar}, %w{Baz Qux}], lambda{|_| 0})
-    # => FooBaz
 
 
 == Using on the web
