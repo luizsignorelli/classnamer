@@ -18,7 +18,8 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
   end
 
   def test_each_part_candidate_starts_with_an_uppercase_letter
-    assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).all?{|part_candidate| part_candidate =~ /\A[A-Z]/}
+    assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).
+      all?{|part_candidate| part_candidate =~ /\A[A-Z]/}
   end
 
   def test_each_part_candidate_is_frozen
@@ -44,7 +45,8 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
   end
 
   def test_generate_returns_concatenation_of_part_candidates_as_strings
-    assert_equal "42ObjecttrueSymbolFoo", Classnamer.generate([[42], [Object], [nil], [true], [:Symbol], ["Foo"]])
+    assert_equal "42ObjecttrueSymbolFoo",
+      Classnamer.generate([[42], [Object], [nil], [true], [:Symbol], ["Foo"]])
   end
 
   def test_generate_calls_prng_with_length_of_each_element_of_part_candidate_matrix
@@ -63,7 +65,8 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
   def test_generate_uses_prng_for_indices
     matrix = [%w{Foo0 Foo1 Foo2}, %w{Bar0 Bar1 Bar2}, %w{Baz0 Baz1 Baz2}]
     indices = [0, 2, 1]
-    assert_equal "Foo0Bar2Baz1", Classnamer.generate(matrix, lambda{|n| indices.shift})
+    assert_equal "Foo0Bar2Baz1",
+      Classnamer.generate(matrix, lambda{|n| indices.shift})
   end
 
   def test_generate_returns_a_single_part_name
