@@ -22,8 +22,8 @@ You can generate a random class name like this:
   puts Classnamer.generate # => PrioritizedUploadWrapper
 
 You can customize how class names are generated. Classnamer will generate
-random class names by combining randomly-selected elements from arrays that you
-provide.
+random class names by concatenating randomly-selected elements of arrays that
+you provide.
 
   puts Classnamer.generate([["Foo", "Bar"], ["Baz", "Qux"]]) # => FooQux
 
