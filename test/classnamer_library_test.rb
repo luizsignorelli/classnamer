@@ -103,6 +103,10 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
     assert_kind_of Classnamer::Generator, Classnamer::Generator.new
   end
 
+  def test_generator_responds_to_generate
+    assert_respond_to Classnamer::Generator.new, :generate
+  end
+
   def test_generator_generates_based_on_initialization_parameters
     matrix = [%w{Foo0 Foo1 Foo2}, %w{Bar0 Bar1 Bar2}, %w{Baz0 Baz1 Baz2}]
     indices = [0, 2, 1]
