@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.executables = ["classnamer"]
   s.require_paths = ["lib"]
   s.add_development_dependency("rake", "0.9.2.2")
-  s.add_development_dependency("minitest", "3.1.0")
+  s.add_development_dependency("minitest", "3.2.0")
 end
