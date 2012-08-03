@@ -14,7 +14,7 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
   end
 
   def test_each_element_of_part_candidate_matrix_is_frozen
-    assert Classnamer::PART_CANDIDATE_MATRIX.all?(&:frozen?)
+    assert Classnamer::PART_CANDIDATE_MATRIX.all?{|array| array.frozen?}
   end
 
   def test_each_part_candidate_starts_with_an_uppercase_letter
@@ -23,7 +23,7 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
   end
 
   def test_each_part_candidate_is_frozen
-    assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).all?(&:frozen?)
+    assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).all?{|str| str.frozen?}
   end
 
   def test_prng_is_frozen

@@ -35,7 +35,7 @@ module Classnamer
        Preference Formatter Sequence Comparator Definition Timer Servlet
        Controller Loader Converter Constraint Module Migrator Descriptor}
   ].freeze.each do |array| # recursive freeze
-    array.freeze.each(&:freeze)
+    array.freeze.each do |str| str.freeze end
   end
 
   # The default index generator, used by generate.
