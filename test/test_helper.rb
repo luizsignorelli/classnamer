@@ -1,2 +1,4 @@
-require "minitest/autorun"
+require "minitest/unit"
+MiniTest::Unit.autorun
+
 require "classnamer"
