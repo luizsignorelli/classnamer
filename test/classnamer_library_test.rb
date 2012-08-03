@@ -50,11 +50,14 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
   end
 
   def test_generate_calls_prng_with_length_of_each_element_of_part_candidate_matrix
-    matrix = [%w{A B C}, %w{A B}, %w{A}]
-    prng = MiniTest::Mock.new
-    prng.expect(:call, 2, [3]).expect(:call, 1, [2]).expect(:call, 0, [1])
+    matrix = [%w{A B C}, [], %w{A B}, %w{A}]
+    prng_args = []
+    prng = lambda { |n|
+      prng_args << n
+      0
+    }
     Classnamer.generate(matrix, prng)
-    prng.verify
+    assert_equal [3, 0, 2, 1], prng_args
   end
 
   def test_generate_uses_prng_for_indices
