@@ -1,8 +1,8 @@
 require "test_helper"
 
-class ClassnamerLibraryTest < MiniTest::Unit::TestCase
+class ClassnamerLibraryTest < Test::Unit::TestCase
   def test_version_constant_exists
-    refute_nil Classnamer::VERSION
+    assert_not_nil Classnamer::VERSION
   end
 
   def test_part_candidate_matrix_has_three_elements
@@ -36,12 +36,6 @@ class ClassnamerLibraryTest < MiniTest::Unit::TestCase
 
   def test_classnamer_generates_a_string
     assert_kind_of String, Classnamer.generate
-  end
-
-  def test_generate_does_not_output
-    assert_silent do
-      Classnamer.generate
-    end
   end
 
   def test_generate_returns_concatenation_of_part_candidates_as_strings
