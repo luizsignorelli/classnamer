@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license = "MIT"
   s.required_ruby_version = ">= 1.8.7"
   s.bindir = "bin"
-  s.files = ["LICENSE", "README.rdoc", "bin/classnamer", "classnamer.gemspec", "lib/classnamer.rb", "lib/classnamer/version.rb", "test/classnamer_library_test.rb", "test/test_helper.rb"]
+  s.files = ["LICENSE.txt", "README.rdoc", "bin/classnamer", "classnamer.gemspec", "lib/classnamer.rb", "lib/classnamer/version.rb", "test/classnamer_library_test.rb", "test/test_helper.rb"]
   s.test_files = ["test/classnamer_library_test.rb", "test/test_helper.rb"]
   s.executables = ["classnamer"]
   s.require_paths = ["lib"]
