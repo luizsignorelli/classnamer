@@ -56,4 +56,4 @@ aaron@aaronbeckerman.com.
 == Copyright
 
 This code is distributed under the MIT License (also known as the Expat
-License). See the LICENSE file for details.
+License). See the LICENSE.txt file for details.
