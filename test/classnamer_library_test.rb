@@ -1,4 +1,5 @@
-require "test_helper"
+require "test/unit"
+require "classnamer"
 
 class ClassnamerLibraryTest < Test::Unit::TestCase
   def test_version_constant_exists
