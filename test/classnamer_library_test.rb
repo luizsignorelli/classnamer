@@ -75,17 +75,17 @@ class ClassnamerLibraryTest < Test::Unit::TestCase
   end
 
   def test_generate_raises_an_exception_when_given_an_inappropriate_matrix
-    assert_raises(NoMethodError) { Classnamer.generate nil }
+    assert_raise(NoMethodError) { Classnamer.generate nil }
   end
 
   def test_generate_raises_an_exception_when_given_an_inappropriate_prng
-    assert_raises(NoMethodError) {
+    assert_raise(NoMethodError) {
       Classnamer.generate Classnamer::PART_CANDIDATE_MATRIX, nil
     }
   end
 
   def test_generate_raises_an_exception_when_argument_contains_an_inappropriate_element
-    assert_raises(NoMethodError) { Classnamer.generate [["Foo"], nil] }
+    assert_raise(NoMethodError) { Classnamer.generate [["Foo"], nil] }
   end
 
   def test_initialize_generator_instance
