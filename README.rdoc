@@ -18,25 +18,25 @@ Interpreter) versions 1.8.7, 1.9.2, and 1.9.3.
 
 You can generate a random class name like this:
 
-  require "classnamer"
+  require 'classnamer'
   puts Classnamer.generate # => PrioritizedUploadWrapper
 
 You can customize how class names are generated. Classnamer will generate
 random class names by concatenating randomly-selected elements of arrays that
 you provide.
 
-  puts Classnamer.generate([["Foo", "Bar"], ["Baz", "Qux"]]) # => FooQux
+  puts Classnamer.generate([%w{Foo Bar}, %w{Baz Qux}]) # => FooQux
 
 You can also specify a custom random number generator. Maybe you don't even
 want it to be random.
 
-  puts Classnamer.generate([["Foo", "Bar"], ["Baz", "Qux"]], lambda{|_| 0})
+  puts Classnamer.generate([%w{Foo Bar}, %w{Baz Qux}], lambda { |_| 0 })
     # => FooBaz
 
 If you plan to use the same customizations multiple times, you can create
 a Classnamer::Generator object for that.
 
-  generator = Classnamer::Generator.new([["Foo", "Bar"], ["Baz", "Qux"]])
+  generator = Classnamer::Generator.new [%w{Foo Bar}, %w{Baz Qux}]
   generator.generate # => FooQux
   generator.generate # => BarQux
 
