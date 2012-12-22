@@ -1,4 +1,4 @@
-require "classnamer/version"
+require 'classnamer/version'
 
 # This module randomly generates class names, such as
 # "PrioritizedUploadWrapper". It does this by concatenating several parts
@@ -49,7 +49,7 @@ module Classnamer
   # arrays of strings. +prng+ must have a "call" method that takes one integer
   # argument (an array length) and acts like Kernel::rand.
   def self.generate(matrix = self::PART_CANDIDATE_MATRIX, prng = self::PRNG)
-    matrix.map{|a| a[prng.call a.length]}.join("")
+    matrix.map { |a| a[prng.call a.length] }.join ''
   end
 
   # A class name generator that always uses the specified part candidate matrix
@@ -66,7 +66,7 @@ module Classnamer
     # Generates a class name using the part candidate matrix and index
     # generator passed in when the object was created.
     def generate
-      Classnamer.generate(@matrix, @prng)
+      Classnamer.generate @matrix, @prng
     end
   end
 end
