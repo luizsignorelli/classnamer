@@ -20,7 +20,7 @@ class ClassnamerLibraryTest < Test::Unit::TestCase
 
   def test_each_part_candidate_starts_with_an_uppercase_letter
     assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).
-      all? { |part_candidate| /\A[A-Z]/ =~ part_candidate }
+      all? { |part_candidate| part_candidate =~ /\A[A-Z]/ }
   end
 
   def test_each_part_candidate_is_frozen
