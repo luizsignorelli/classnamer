@@ -3,7 +3,7 @@ require 'classnamer'
 
 class ClassnamerLibraryTest < Test::Unit::TestCase
   def test_version_constant_exists
-    assert_not_nil Classnamer::VERSION
+    assert_instance_of String, Classnamer::VERSION
   end
 
   def test_part_candidate_matrix_has_three_elements
