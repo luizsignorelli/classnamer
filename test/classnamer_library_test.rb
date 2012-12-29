@@ -10,26 +10,9 @@ class ClassnamerLibraryTest < Test::Unit::TestCase
     assert_equal 3, Classnamer::PART_CANDIDATE_MATRIX.length
   end
 
-  def test_part_candidate_matrix_is_frozen
-    assert Classnamer::PART_CANDIDATE_MATRIX.frozen?
-  end
-
-  def test_each_element_of_part_candidate_matrix_is_frozen
-    assert Classnamer::PART_CANDIDATE_MATRIX.all? { |array| array.frozen? }
-  end
-
   def test_each_part_candidate_starts_with_an_uppercase_letter
     assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).
       all? { |part_candidate| part_candidate =~ /\A[A-Z]/ }
-  end
-
-  def test_each_part_candidate_is_frozen
-    assert Classnamer::PART_CANDIDATE_MATRIX.flatten(1).
-      all? { |str| str.frozen? }
-  end
-
-  def test_prng_is_frozen
-    assert Classnamer::PRNG.frozen?
   end
 
   def test_classnamer_responds_to_generate
