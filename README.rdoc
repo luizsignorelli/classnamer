@@ -36,7 +36,7 @@ want it to be random.
 If you plan to use the same customizations multiple times, you can create
 a Classnamer::Generator object for that.
 
-  generator = Classnamer::Generator.new [%w{Foo Bar}, %w{Baz Qux}]
+  generator = Classnamer::Generator.new([%w{Foo Bar}, %w{Baz Qux}])
   generator.generate # => FooQux
   generator.generate # => BarQux
 
