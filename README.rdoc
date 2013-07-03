@@ -5,7 +5,7 @@ enterprise-friendly object-oriented programming languages like C++ and Java. It
 includes a library and a command-line program.
 
 This code is packaged as a RubyGem and tested with MRI (Matz's Ruby
-Interpreter) versions 1.8.7, 1.9.2, and 1.9.3.
+Interpreter) versions 1.8.7, 1.9.2, 1.9.3, and 2.0.0.
 
 
 == Using the command-line program
