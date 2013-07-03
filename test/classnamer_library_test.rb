@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'classnamer'
 
-class ClassnamerLibraryTest < Test::Unit::TestCase
+class ClassnamerLibraryTest < Minitest::Test
   def test_version_constant_exists
     assert_instance_of String, Classnamer::VERSION
   end
@@ -59,17 +59,17 @@ class ClassnamerLibraryTest < Test::Unit::TestCase
   end
 
   def test_generate_raises_an_exception_when_given_an_inappropriate_matrix
-    assert_raise(NoMethodError) { Classnamer.generate nil }
+    assert_raises(NoMethodError) { Classnamer.generate nil }
   end
 
   def test_generate_raises_an_exception_when_given_an_inappropriate_prng
-    assert_raise(NoMethodError) {
+    assert_raises(NoMethodError) {
       Classnamer.generate Classnamer::PART_CANDIDATE_MATRIX, nil
     }
   end
 
   def test_generate_raises_an_exception_when_argument_contains_an_inappropriate_element
-    assert_raise(NoMethodError) { Classnamer.generate [['Foo'], nil] }
+    assert_raises(NoMethodError) { Classnamer.generate [['Foo'], nil] }
   end
 
   def test_initialize_generator_instance
